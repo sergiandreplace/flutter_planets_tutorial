@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_page_body.dart';
 
 class HomePage extends StatelessWidget {
 
@@ -8,6 +9,9 @@ class HomePage extends StatelessWidget {
       body: new Column(
         children: <Widget>[
           new GradientAppBar("treva"),
+          new HomePageBody(),
+          new HomePageBody(),
+          new HomePageBody(),
         ],
       ),
     );
