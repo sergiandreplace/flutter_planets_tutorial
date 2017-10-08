@@ -41,7 +41,7 @@ class PlanetRow extends StatelessWidget {
     Widget _planetValue({String value, String image}) {
       return new Row(
         children: <Widget>[
-          new Image.asset("assets/img/ic_gravity.png", height: 12.0),
+          new Image.asset(image, height: 12.0),
           new Container(width: 8.0),
           new Text(planet.gravity, style: regularTextStyle),
         ]
