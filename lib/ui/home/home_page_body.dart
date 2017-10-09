@@ -6,12 +6,11 @@ import 'planet_row.dart';
 class HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Column(
-      children: <Widget>[
-        new PlanetRow(planets[0]),
-        new PlanetRow(planets[1]),
-        new PlanetRow(planets[2]),
-      ],
+    return new Expanded(
+      child: new ListView.builder(
+        itemBuilder: (context, index) => new PlanetRow(planets[index]),
+        itemCount: planets.length,
+      ),
     );
   }
 }
