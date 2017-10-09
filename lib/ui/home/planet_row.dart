@@ -15,10 +15,13 @@ class PlanetRow extends StatelessWidget {
         vertical: 16.0
       ),
       alignment: FractionalOffset.centerLeft,
-      child: new Image(
-        image: new AssetImage(planet.image),
-        height: 92.0,
-        width: 92.0,
+      child: new Hero(
+          tag: "planet-hero-${planet.id}",
+          child: new Image(
+          image: new AssetImage(planet.image),
+          height: 92.0,
+          width: 92.0,
+        ),
       ),
     );
 
