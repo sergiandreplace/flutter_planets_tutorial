@@ -8,9 +8,6 @@ void main() {
     new MaterialApp(
       title: "Planets",
       home: new HomePage(),
-      routes: <String, WidgetBuilder>{
-        '/detail': (_) => new DetailPage(),
-      },
     ),
   );
 }
