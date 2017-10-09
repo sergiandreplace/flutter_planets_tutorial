@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_planets_tutorial/model/planets.dart';
+import 'package:flutter_planets_tutorial/ui/text_style.dart';
 
 
 class DetailPage extends StatelessWidget {
@@ -17,7 +18,10 @@ class DetailPage extends StatelessWidget {
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Text(planet.name),
+            new Text(
+              planet.name,
+              style: Style.headerTextStyle,
+            ),
             new Hero(tag: "planet-hero-${planet.id}",
               child: new Image.asset(
                   planet.image,

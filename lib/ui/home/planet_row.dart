@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_planets_tutorial/model/planets.dart';
 import 'package:flutter_planets_tutorial/ui/detail/detail_page.dart';
+import 'package:flutter_planets_tutorial/ui/text_style.dart';
 
 class PlanetRow extends StatelessWidget {
 
@@ -25,29 +26,14 @@ class PlanetRow extends StatelessWidget {
       ),
     );
 
-    final baseTextStyle = const TextStyle(
-      fontFamily: 'Poppins'
-    );
-    final regularTextStyle = baseTextStyle.copyWith(
-      color: const Color(0xffb6b2df),
-      fontSize: 9.0,
-      fontWeight: FontWeight.w400
-    );
-    final subHeaderTextStyle = regularTextStyle.copyWith(
-      fontSize: 12.0
-    );
-    final headerTextStyle = baseTextStyle.copyWith(
-      color: Colors.white,
-      fontSize: 18.0,
-      fontWeight: FontWeight.w600
-    );
+
 
     Widget _planetValue({String value, String image}) {
       return new Row(
         children: <Widget>[
           new Image.asset(image, height: 12.0),
           new Container(width: 8.0),
-          new Text(planet.gravity, style: regularTextStyle),
+          new Text(planet.gravity, style: Style.regularTextStyle),
         ]
       );
     }
@@ -60,9 +46,9 @@ class PlanetRow extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           new Container(height: 4.0),
-          new Text(planet.name, style: headerTextStyle),
+          new Text(planet.name, style: Style.headerTextStyle),
           new Container(height: 10.0),
-          new Text(planet.location, style: subHeaderTextStyle),
+          new Text(planet.location, style: Style.subHeaderTextStyle),
           new Container(
             margin: new EdgeInsets.symmetric(vertical: 8.0),
             height: 2.0,
