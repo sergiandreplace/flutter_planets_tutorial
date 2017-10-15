@@ -97,7 +97,10 @@ class PlanetRow extends StatelessWidget {
     return new GestureDetector(
       onTap: () => Navigator.of(context).push(new PageRouteBuilder(
         pageBuilder: (_, __, ___) => new DetailPage(planet),
-      )),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+          new FadeTransition(opacity: animation, child: child),
+        ),
+      ),
       child: new Container(
         height: 120.0,
         margin: const EdgeInsets.symmetric(
