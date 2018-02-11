@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_planets_tutorial/ui/detail/detail_page.dart';
 
 import 'ui/home/home_page.dart';
 

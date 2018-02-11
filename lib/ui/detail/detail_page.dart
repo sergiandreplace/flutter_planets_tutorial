@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_planets_tutorial/model/planets.dart';
-import 'package:flutter_planets_tutorial/ui/home/planet_row.dart';
+import 'package:flutter_planets_tutorial/ui/common/plannet_summary.dart';
 
 
 class DetailPage extends StatelessWidget {
@@ -43,7 +43,7 @@ class DetailPage extends StatelessWidget {
               margin: new EdgeInsets.only(top: 72.0),
               child: new ListView(
                 children: <Widget>[
-                  new PlanetRow(planet,
+                  new PlanetSummary(planet,
                     horizontal: false,
                   ),
                   new Text("Overview"),

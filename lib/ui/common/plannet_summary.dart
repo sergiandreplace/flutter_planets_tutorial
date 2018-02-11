@@ -3,14 +3,14 @@ import 'package:flutter_planets_tutorial/model/planets.dart';
 import 'package:flutter_planets_tutorial/ui/detail/detail_page.dart';
 import 'package:flutter_planets_tutorial/ui/text_style.dart';
 
-class PlanetRow extends StatelessWidget {
+class PlanetSummary extends StatelessWidget {
 
   final Planet planet;
   final bool horizontal;
 
-  PlanetRow(this.planet, {this.horizontal = true});
+  PlanetSummary(this.planet, {this.horizontal = true});
 
-  PlanetRow.vertical(this.planet): horizontal = false;
+  PlanetSummary.vertical(this.planet): horizontal = false;
 
 
   @override
