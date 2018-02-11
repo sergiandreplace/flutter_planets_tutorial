@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_planets_tutorial/model/planets.dart';
+import 'package:flutter_planets_tutorial/ui/common/separator.dart';
 import 'package:flutter_planets_tutorial/ui/detail/detail_page.dart';
 import 'package:flutter_planets_tutorial/ui/text_style.dart';
 
@@ -40,7 +41,7 @@ class PlanetSummary extends StatelessWidget {
           children: <Widget>[
             new Image.asset(image, height: 12.0),
             new Container(width: 8.0),
-            new Text(planet.gravity, style: Style.regularTextStyle),
+            new Text(planet.gravity, style: Style.smallTextStyle),
           ]
         ),
       );
@@ -54,15 +55,10 @@ class PlanetSummary extends StatelessWidget {
         crossAxisAlignment: horizontal ? CrossAxisAlignment.start : CrossAxisAlignment.center,
         children: <Widget>[
           new Container(height: 4.0),
-          new Text(planet.name, style: Style.headerTextStyle),
+          new Text(planet.name, style: Style.titleTextStyle),
           new Container(height: 10.0),
-          new Text(planet.location, style: Style.subHeaderTextStyle),
-          new Container(
-            margin: new EdgeInsets.symmetric(vertical: 8.0),
-            height: 2.0,
-            width: 18.0,
-            color: new Color(0xff00c6ff)
-          ),
+          new Text(planet.location, style: Style.commonTextStyle),
+          new Separator(),
           new Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
