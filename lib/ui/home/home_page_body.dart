@@ -4,13 +4,15 @@ import 'package:flutter_planets_tutorial/model/planets.dart';
 import 'planet_row.dart';
 
 class HomePageBody extends StatelessWidget {
+  const HomePageBody({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return new Column(
+    return Column(
       children: <Widget>[
-        new PlanetRow(planets[0]),
-        new PlanetRow(planets[1]),
-        new PlanetRow(planets[2]),
+        PlanetRow(planets[0]),
+        PlanetRow(planets[1]),
+        PlanetRow(planets[2]),
       ],
     );
   }
