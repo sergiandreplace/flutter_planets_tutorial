@@ -41,7 +41,6 @@ class PlanetRow extends StatelessWidget {
 
     final planetCardContent = Container(
       margin: const EdgeInsets.fromLTRB(76.0, 16.0, 16.0, 16.0),
-      constraints: const BoxConstraints.expand(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -56,14 +55,10 @@ class PlanetRow extends StatelessWidget {
               color: const Color(0xff00c6ff)),
           Row(
             children: <Widget>[
-              Expanded(
-                  child: _planetValue(
-                      value: planet.distance,
-                      image: 'assets/img/ic_distance.png')),
-              Expanded(
-                  child: _planetValue(
-                      value: planet.gravity,
-                      image: 'assets/img/ic_gravity.png'))
+              _planetValue(
+                  value: planet.distance, image: 'assets/img/ic_distance.png'),
+              _planetValue(
+                  value: planet.gravity, image: 'assets/img/ic_gravity.png')
             ],
           ),
         ],
@@ -72,7 +67,6 @@ class PlanetRow extends StatelessWidget {
 
     final planetCard = Container(
       child: planetCardContent,
-      height: 124.0,
       margin: const EdgeInsets.only(left: 46.0),
       decoration: BoxDecoration(
         color: const Color(0xFF333366),
@@ -92,17 +86,18 @@ class PlanetRow extends StatelessWidget {
         onTap: () => Navigator.of(context).push(PageRouteBuilder(
               pageBuilder: (_, __, ___) => DetailPage(planet),
             )),
-        child: Container(
-          height: 120.0,
-          margin: const EdgeInsets.symmetric(
-            vertical: 16.0,
-            horizontal: 24.0,
-          ),
-          child: Stack(
-            children: <Widget>[
-              planetCard,
-              planetThumbnail,
-            ],
+        child: FittedBox(
+          child: Container(
+            margin: const EdgeInsets.symmetric(
+              vertical: 16.0,
+              horizontal: 24.0,
+            ),
+            child: Stack(
+              children: <Widget>[
+                planetCard,
+                planetThumbnail,
+              ],
+            ),
           ),
         ));
   }
