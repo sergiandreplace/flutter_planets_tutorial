@@ -40,37 +40,39 @@ class PlanetSummary extends StatelessWidget {
     }
 
     final planetCardContent = Container(
+      width: 312,
       margin: EdgeInsets.fromLTRB(
           horizontal ? 76.0 : 16.0, horizontal ? 16.0 : 42.0, 16.0, 16.0),
-      child: Column(
-        crossAxisAlignment:
-            horizontal ? CrossAxisAlignment.start : CrossAxisAlignment.center,
-        children: <Widget>[
-          Container(height: 4.0),
-          Text(planet.name, style: Style.titleTextStyle),
-          Container(height: 10.0),
-          Text(planet.location, style: Style.commonTextStyle),
-          const Separator(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              _planetValue(
-                  value: planet.distance, image: 'assets/img/ic_distance.png'),
-              Container(
-                width: 32.0,
-              ),
-              _planetValue(
-                  value: planet.gravity, image: 'assets/img/ic_gravity.png')
-            ],
-          ),
-        ],
+      child: FittedBox(
+        child: Column(
+          crossAxisAlignment:
+              horizontal ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(height: 4.0),
+            Text(planet.name, style: Style.titleTextStyle),
+            Container(height: 10.0),
+            Text(planet.location, style: Style.commonTextStyle),
+            const Separator(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                _planetValue(
+                    value: planet.distance,
+                    image: 'assets/img/ic_distance.png'),
+                Container(
+                  width: 32.0,
+                ),
+                _planetValue(
+                    value: planet.gravity, image: 'assets/img/ic_gravity.png')
+              ],
+            ),
+          ],
+        ),
       ),
     );
 
     final planetCard = Container(
-      child: FittedBox(
-        child: planetCardContent,
-      ),
+      child: planetCardContent,
       height: horizontal ? 124.0 : 154.0,
       margin: horizontal
           ? const EdgeInsets.only(left: 46.0)
@@ -100,18 +102,16 @@ class PlanetSummary extends StatelessWidget {
                 ),
               )
           : null,
-      child: FittedBox(
-        child: Container(
-          margin: const EdgeInsets.symmetric(
-            vertical: 16.0,
-            horizontal: 24.0,
-          ),
-          child: Stack(
-            children: <Widget>[
-              planetCard,
-              planetThumbnail,
-            ],
-          ),
+      child: Container(
+        margin: const EdgeInsets.symmetric(
+          vertical: 16.0,
+          horizontal: 24.0,
+        ),
+        child: Stack(
+          children: <Widget>[
+            planetCard,
+            planetThumbnail,
+          ],
         ),
       ),
     );
