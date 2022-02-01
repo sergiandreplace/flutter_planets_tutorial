@@ -36,28 +36,32 @@ class PlanetRow extends StatelessWidget {
     }
 
     final planetCardContent = Container(
+      width: 312,
       margin: const EdgeInsets.fromLTRB(76.0, 16.0, 16.0, 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(height: 4.0),
-          Text(planet.name, style: headerTextStyle),
-          Container(height: 10.0),
-          Text(planet.location, style: subHeaderTextStyle),
-          Container(
-              margin: const EdgeInsets.symmetric(vertical: 8.0),
-              height: 2.0,
-              width: 18.0,
-              color: const Color(0xff00c6ff)),
-          Row(
-            children: <Widget>[
-              _planetValue(
-                  value: planet.distance, image: 'assets/img/ic_distance.png'),
-              _planetValue(
-                  value: planet.gravity, image: 'assets/img/ic_gravity.png')
-            ],
-          ),
-        ],
+      child: FittedBox(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(height: 4.0),
+            Text(planet.name, style: headerTextStyle),
+            Container(height: 10.0),
+            Text(planet.location, style: subHeaderTextStyle),
+            Container(
+                margin: const EdgeInsets.symmetric(vertical: 8.0),
+                height: 2.0,
+                width: 18.0,
+                color: const Color(0xff00c6ff)),
+            Row(
+              children: <Widget>[
+                _planetValue(
+                    value: planet.distance,
+                    image: 'assets/img/ic_distance.png'),
+                _planetValue(
+                    value: planet.gravity, image: 'assets/img/ic_gravity.png')
+              ],
+            ),
+          ],
+        ),
       ),
     );
 
@@ -78,18 +82,16 @@ class PlanetRow extends StatelessWidget {
       ),
     );
 
-    return FittedBox(
-      child: Container(
-          margin: const EdgeInsets.symmetric(
-            vertical: 16.0,
-            horizontal: 24.0,
-          ),
-          child: Stack(
-            children: <Widget>[
-              planetCard,
-              planetThumbnail,
-            ],
-          )),
-    );
+    return Container(
+        margin: const EdgeInsets.symmetric(
+          vertical: 16.0,
+          horizontal: 24.0,
+        ),
+        child: Stack(
+          children: <Widget>[
+            planetCard,
+            planetThumbnail,
+          ],
+        ));
   }
 }
