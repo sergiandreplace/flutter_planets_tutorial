@@ -4,9 +4,9 @@ import 'ui/home/home_page.dart';
 
 void main() {
   runApp(
-    new MaterialApp(
+    const MaterialApp(
       title: "Planets",
-      home: new HomePage(),
+      home: HomePage(),
     ),
   );
 }
