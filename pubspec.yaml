@@ -1,6 +1,9 @@
 name: flutter_planets_tutorial
 description: The Flutter Planets app tutorial with commits per lesson
 
+environment:
+  sdk: ">=2.15.1 <3.0.0"
+
 dependencies:
   flutter:
     sdk: flutter
